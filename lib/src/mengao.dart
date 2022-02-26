@@ -18,7 +18,7 @@ class Mengao extends StatelessWidget {
               decoration: BoxDecoration(
                 color: Colors.red,
                 border: Border.all(
-                  width: 5.0,
+                  width: 10.0,
                   color: Colors.black,
                   style: BorderStyle.solid,
                 ),
@@ -39,31 +39,59 @@ class Mengao extends StatelessWidget {
                   ),
                 ]
               ),
-              child: Column(
-                children: [
-                  IntrinsicHeight(
-                    child: Row(
-                      children: [
-                        const SimbolBuilder(),
-                        Expanded(
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: const [
-                              StripeBuilder(numberOfStripe: 0),
-                              StripeBuilder(numberOfStripe: 1),
-                              StripeBuilder(numberOfStripe: 2),
-                            ],
-                          ),
+              child: LayoutBuilder(
+                builder: (context, constraints) {
+                  return Column(
+                    children: [
+                      IntrinsicHeight(
+                        child: Row(
+                          children: [
+                            const SimbolBuilder(),
+                            Expanded(
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  StripeBuilder(
+                                    numberOfStripe: 0,
+                                    constraints: constraints,
+                                  ),
+                                  StripeBuilder(
+                                    numberOfStripe: 1,
+                                    constraints: constraints,
+                                  ),
+                                  StripeBuilder(
+                                    numberOfStripe: 2,
+                                    constraints: constraints,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
-                  ),
-                  const StripeBuilder(numberOfStripe: 3),
-                  const StripeBuilder(numberOfStripe: 4),
-                  const StripeBuilder(numberOfStripe: 5),
-                  const StripeBuilder(numberOfStripe: 6),
-                  const StripeBuilder(numberOfStripe: 7),
-                ]
+                      ),
+                      StripeBuilder(
+                        numberOfStripe: 3,
+                        constraints: constraints,
+                      ),
+                      StripeBuilder(
+                        numberOfStripe: 4,
+                        constraints: constraints,
+                      ),
+                      StripeBuilder(
+                        numberOfStripe: 5,
+                        constraints: constraints,
+                      ),
+                      StripeBuilder(
+                        numberOfStripe: 6,
+                        constraints: constraints,
+                      ),
+                      StripeBuilder(
+                        numberOfStripe: 7,
+                        constraints: constraints,
+                      ),
+                    ]
+                  );
+                }
               ),
             ),
           ),

@@ -10,11 +10,11 @@ class SimbolBuilder extends StatelessWidget {
       decoration: const BoxDecoration(
         border: Border(
           right: BorderSide(
-            width: 1.0,
+            width: 10.0,
             color: Colors.black
           ),
           bottom: BorderSide(
-            width: 1.0,
+            width: 10.0,
             color: Colors.black
           ),
         ),
