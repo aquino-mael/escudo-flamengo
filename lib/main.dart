@@ -4,6 +4,6 @@ import 'src/mengao.dart';
 
 void main() {
   runApp(
-    Mengao(),
+    const Mengao(),
   );
 }
