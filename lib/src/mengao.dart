@@ -50,45 +50,21 @@ class Mengao extends StatelessWidget {
                             Expanded(
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  StripeBuilder(
-                                    numberOfStripe: 0,
+                                children: List.generate(3, (index) => StripeBuilder(
+                                    numberOfStripe: index,
                                     constraints: constraints,
                                   ),
-                                  StripeBuilder(
-                                    numberOfStripe: 1,
-                                    constraints: constraints,
-                                  ),
-                                  StripeBuilder(
-                                    numberOfStripe: 2,
-                                    constraints: constraints,
-                                  ),
-                                ],
+                                ),
                               ),
                             ),
                           ],
                         ),
                       ),
-                      StripeBuilder(
-                        numberOfStripe: 3,
+                      ...List.generate(5, (index) => StripeBuilder(
+                        numberOfStripe: index + 1,
                         constraints: constraints,
                       ),
-                      StripeBuilder(
-                        numberOfStripe: 4,
-                        constraints: constraints,
-                      ),
-                      StripeBuilder(
-                        numberOfStripe: 5,
-                        constraints: constraints,
-                      ),
-                      StripeBuilder(
-                        numberOfStripe: 6,
-                        constraints: constraints,
-                      ),
-                      StripeBuilder(
-                        numberOfStripe: 7,
-                        constraints: constraints,
-                      ),
+                    ),
                     ]
                   );
                 }
